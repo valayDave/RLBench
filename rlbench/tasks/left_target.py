@@ -14,18 +14,23 @@ class LeftTarget(Task):
 
     def init_task(self) -> None:
         self.target = Shape('target')
-        self.boundaries = Shape('boundary')
+        self.boundary = [Shape('boundary')]
+        self.boundary1 = Shape('boundary')
         success_sensor = ProximitySensor('success')
+        print(self.target.get_position())
+        self.workspace=Shape('workspace0')
         self.register_success_conditions(
             [DetectedCondition(self.robot.arm.get_tip(), success_sensor)])
-        # TODO: This is called once when a task is initialised.
-        pass
+
 
     def init_episode(self, index: int) -> List[str]:
-        color_name, color_rgb = colors[index]
+        self._variation_index = index
+        color_name, color_rgb = colors[0]
         self.target.set_color(color_rgb)
 
-        b = SpawnBoundary([self.boundaries])
+        self.boundary1.set_position([+1.1921e-07, +2.0000e-01, +1.7500e-01], relative_to=self.workspace)
+
+        b = SpawnBoundary(self.boundary)
         for ob in [self.target]:
             b.sample(ob, min_distance=0.2,
                      min_rotation=(0, 0, 0), max_rotation=(0, 0, 0))
@@ -33,16 +38,16 @@ class LeftTarget(Task):
         return ['reach the %s target' % color_name,
                 'touch the %s ball with the panda gripper' % color_name,
                 'reach the %s sphere' % color_name]
-        # TODO: This is called at the start of each episode.
-        return ['']
+
+
 
     def variation_count(self) -> int:
         return len(colors)
-        # TODO: The number of variations for this task.
-        return 1
+
+
 
     def base_rotation_bounds(self) -> Tuple[List[float], List[float]]:
-        return [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]
+        return [0.0, 0.0, 0.0], [0.0,0.0,0.0]
 
     def get_low_dim_state(self) -> np.ndarray:
         # One of the few tasks that have a custom low_dim_state function.

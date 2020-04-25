@@ -21,7 +21,7 @@ from absl import flags
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string('save_path',
-                    '/tmp/rlbench_data/',
+                    '/home/vicky/rlbench_data/',
                     'Where to save the demos.')
 flags.DEFINE_list('tasks', [],
                   'The tasks to collect. If empty, all tasks are collected.')
