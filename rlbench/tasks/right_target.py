@@ -17,7 +17,6 @@ class RightTarget(Task):
         self.boundary = [Shape('boundary')]
         self.boundary1 = Shape('boundary')
         success_sensor = ProximitySensor('success')
-        print(self.target.get_position())
         self.workspace=Shape('workspace0')
         self.register_success_conditions(
             [DetectedCondition(self.robot.arm.get_tip(), success_sensor)])

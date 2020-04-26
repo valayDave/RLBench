@@ -64,6 +64,7 @@ from rlbench.tasks.reach_and_drag import ReachAndDrag
 from rlbench.tasks.reach_target import ReachTarget
 from rlbench.tasks.remove_cups import RemoveCups
 from rlbench.tasks.left_target import LeftTarget
+from rlbench.tasks.right_target import RightTarget
 from rlbench.tasks.scoop_with_spatula import ScoopWithSpatula
 from rlbench.tasks.screw_nail import ScrewNail
 from rlbench.tasks.set_the_table import SetTheTable
@@ -104,6 +105,7 @@ FS10_V1 = {
     'train': [
         ReachTarget,
         LeftTarget,
+        RightTarget,
         CloseBox,
         CloseMicrowave,
         PlugChargerInPowerSupply,
