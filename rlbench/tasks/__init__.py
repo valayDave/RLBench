@@ -1,4 +1,7 @@
 from rlbench.tasks.beat_the_buzz import BeatTheBuzz
+from rlbench.tasks.all_target import AllTarget as ReachTarget
+from rlbench.tasks.left_target import LeftTarget
+from rlbench.tasks.right_target import RightTarget
 from rlbench.tasks.block_pyramid import BlockPyramid
 from rlbench.tasks.change_channel import ChangeChannel
 from rlbench.tasks.change_clock import ChangeClock
@@ -61,8 +64,9 @@ from rlbench.tasks.put_toilet_roll_on_stand import PutToiletRollOnStand
 from rlbench.tasks.put_tray_in_oven import PutTrayInOven
 from rlbench.tasks.put_umbrella_in_umbrella_stand import PutUmbrellaInUmbrellaStand
 from rlbench.tasks.reach_and_drag import ReachAndDrag
-from rlbench.tasks.reach_target import ReachTarget
 from rlbench.tasks.remove_cups import RemoveCups
+from rlbench.tasks.left_target import LeftTarget
+from rlbench.tasks.right_target import RightTarget
 from rlbench.tasks.scoop_with_spatula import ScoopWithSpatula
 from rlbench.tasks.screw_nail import ScrewNail
 from rlbench.tasks.set_the_table import SetTheTable
@@ -102,6 +106,8 @@ from rlbench.tasks.wipe_desk import WipeDesk
 FS10_V1 = {
     'train': [
         ReachTarget,
+        LeftTarget,
+        RightTarget,
         CloseBox,
         CloseMicrowave,
         PlugChargerInPowerSupply,
