@@ -1,4 +1,7 @@
 from rlbench.tasks.beat_the_buzz import BeatTheBuzz
+from rlbench.tasks.all_target import AllTarget
+from rlbench.tasks.left_target import LeftTarget
+from rlbench.tasks.right_target import RightTarget
 from rlbench.tasks.block_pyramid import BlockPyramid
 from rlbench.tasks.change_channel import ChangeChannel
 from rlbench.tasks.change_clock import ChangeClock
