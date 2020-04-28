@@ -64,7 +64,6 @@ from rlbench.tasks.put_toilet_roll_on_stand import PutToiletRollOnStand
 from rlbench.tasks.put_tray_in_oven import PutTrayInOven
 from rlbench.tasks.put_umbrella_in_umbrella_stand import PutUmbrellaInUmbrellaStand
 from rlbench.tasks.reach_and_drag import ReachAndDrag
-from rlbench.tasks.reach_target import ReachTarget
 from rlbench.tasks.remove_cups import RemoveCups
 from rlbench.tasks.left_target import LeftTarget
 from rlbench.tasks.right_target import RightTarget
@@ -106,7 +105,7 @@ from rlbench.tasks.wipe_desk import WipeDesk
 
 FS10_V1 = {
     'train': [
-        ReachTarget,
+        AllTarget,
         LeftTarget,
         RightTarget,
         CloseBox,
